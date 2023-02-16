@@ -1,1 +1,0 @@
-# arkafstore.netlify.app
