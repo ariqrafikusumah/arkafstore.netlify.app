@@ -1,5 +1,6 @@
 import React from 'react'
 import { BeakerIcon } from '@heroicons/react/24/solid'
+import Logo from '../assets/img/logo-web.png';
 
 export default function Navbar() {
   return (
@@ -8,7 +9,7 @@ export default function Navbar() {
         <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900 shadow-lg xl:px-52 lg:px-32">
           <div className="container flex flex-wrap items-center justify-between mx-auto">
             <a href="/" className="flex items-center">
-              <img src="../src/assets/img/logo-web.png" className="h-9 mr-3 sm:h-9" alt="Flowbite Logo" />
+              <img src={Logo} className="h-9 mr-3 sm:h-9" alt="logo" />
               {/* <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span> */}
             </a>
             <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-white focus:outline-none focus:ring-2 focus:ring-neutral-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">

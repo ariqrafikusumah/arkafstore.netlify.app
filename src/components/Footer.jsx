@@ -1,39 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import Logo from '../assets/img/logo-web.png';
 
 export default function Footer() {
     return (
         <>
-            {/* <div className='bg-white mt-5'>
-                <div className='xl:px-52 lg:px-32 md:px-5'>
-                    <img className='w-32' src="../src/assets/img/logo-web.png" alt="" />
-                    <div className='grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 gap-4 text-justify'>
-                        Top-Up Game Favorit Kamu Di ARKAFSTORE Agar Main Game Semakin Seru. Pengiriman Cepat Dan Berbagai Methode Pembayaran Yang Lengkap.
-                        <div className=''>
-                            <span className='font-bold'>GAME POPULAR</span>
-                            <div>Mobile Legends</div>
-                            <div>Free Fire</div>
-                            <div>Pubg Mobile</div>
-                        </div>
-                        <div className=''>
-                            <span className='font-bold'>PETA SITUS</span>
-                            <div>Beranda</div>
-                            <div>Tentang</div>
-                            <div>Login</div>
-                        </div>
-                    </div>
-                    <hr className='border-gray-300 shadow-lg' />
-                    <div>
-                        © 2023 ARKAFSTORE. All rights reserved
-                    </div>
-                </div>
-            </div> */}
-
             <footer className="p-4 bg-white sm:p-6 dark:bg-gray-900 xl:px-52 lg:px-32 md:px-5">
                 <div className="md:flex md:justify-between">
                     <div className="mb-6 md:mb-0">
                         <a href="/" className="flex items-center">
-                            <img src="../src/assets/img/logo-web.png" className="h-32 mr-3" alt="FlowBite Logo" />
+                            <img src={Logo} className="h-32 mr-3" alt="logo" />
                             {/* <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span> */}
                         </a>
                     </div>
