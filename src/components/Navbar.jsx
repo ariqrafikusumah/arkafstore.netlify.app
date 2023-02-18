@@ -22,7 +22,7 @@ export default function Navbar_() {
               >
                 <Offcanvas.Header closeButton>
                   <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                    <img src={Logo} className="h-full mr-3 sm:h-9" alt="logo" />
+                    <img src={Logo} className="h-9 mr-3 sm:h-9" alt="logo" />
                   </Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
