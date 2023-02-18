@@ -4,7 +4,7 @@ import Logo from '../assets/img/logo-web.png';
 export default function Footer() {
     return (
         <>
-            <footer className="p-4 bg-white sm:p-6 dark:bg-gray-900 xl:px-52 lg:px-32 md:px-5">
+            <footer className="p-4 sm:p-6 dark:bg-gray-900 xl:px-52 lg:px-32 md:px-5 mt-5">
                 <div className="md:flex md:justify-between">
                     <div className="mb-6 md:mb-0">
                         <a href="/" className="flex items-center">
@@ -39,10 +39,10 @@ export default function Footer() {
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
                             <ul className="text-gray-600 dark:text-gray-400">
                                 <li className="mb-4">
-                                    <a href="#" className="hover:underline">Privacy Policy</a>
+                                    <a href="/PrivacyPolicy" className="hover:underline">Privacy Policy</a>
                                 </li>
                                 <li className="mb-4">
-                                    <a href="#" className="hover:underline">Terms &amp; Conditions</a>
+                                    <a href="/Terms" className="hover:underline">Terms &amp; Conditions</a>
                                 </li>
                             </ul>
                         </div>
@@ -68,7 +68,11 @@ export default function Footer() {
                     </div>
                 </div>
             </footer>
-
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path fill="#5000ca" fill-opacity="0.7" d="M0,224L34.3,224C68.6,224,137,224,206,224C274.3,224,343,224,411,213.3C480,203,549,181,617,149.3C685.7,117,754,75,823,80C891.4,85,960,139,1029,138.7C1097.1,139,1166,85,1234,80C1302.9,75,1371,117,1406,138.7L1440,160L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path>
+                </svg>
+            </div>
 
         </>
     )

@@ -1,6 +1,7 @@
-import React, { useState, useEffect, Fragment } from 'react'
+import React, { useState, useEffect } from 'react'
 import Carousel from '../components/Carousel'
 import axios from 'axios';
+import { Button } from 'react-bootstrap';
 
 export default function Beranda() {
     const [firebaseData, setFirebaseData] = useState([]);
@@ -57,18 +58,18 @@ export default function Beranda() {
                                 <span className='text-2xl font-bold '>GAME TOP UP</span>
                             </div>
                         </div>
-                        <div className='grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 xss:grid-cols-2 gap-4'>
+                        <div className='grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-2 xs:grid-cols-2 xss:grid-cols-2 gap-4'>
                             {Object.keys(firebaseData).map((key) => (
                                 <div key={key}>
-                                    <div className='border border-gray-200 shadow-lg rounded-lg'>
+                                    <div className='rounded-lg'>
                                         <div>
-                                            <div className=''>
-                                                <img className='rounded-xl h-32 w-32 mx-auto' src={firebaseData[key].thumbnail} alt="Mobile Legends" />
+                                            <div>
+                                                <img className='rounded-xl h-32 w-32 mx-auto' src={firebaseData[key].thumbnail} alt={firebaseData[key].category} />
                                             </div>
                                             <div className='text-center font-bold'>{firebaseData[key].category}</div>
                                             <div className='text-center'>
                                                 <a href={firebaseData[key].link}>
-                                                    <button type="button" class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Top Up</button>
+                                                    <Button className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-2"> Top Up </Button>
                                                 </a>
                                             </div>
                                         </div>
