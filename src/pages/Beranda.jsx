@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Carousel from '../components/Carousel'
 import axios from 'axios';
-import { Button } from 'react-bootstrap';
+import PopUp from '../components/PopUp';
 
 export default function Beranda() {
     const [firebaseData, setFirebaseData] = useState([]);
@@ -34,6 +34,25 @@ export default function Beranda() {
             });
     }, []);
 
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleClose = () => {
+        setIsOpen(false);
+        localStorage.setItem('popupDisplayed', 'true');
+        console.log(localStorage);
+    };
+    useEffect(() => {
+        const popupDisplayed = localStorage.getItem('popupDisplayed');
+        if (!popupDisplayed) {
+            setIsOpen(true);
+        }
+        const timer = setTimeout(() => {
+            setIsOpen(true);
+        }, 3000);
+        return () => clearTimeout(timer);
+    }, []);
+
     if (isLoading) return (
         <div className="text-center mt-5">
             <div role="status">
@@ -48,6 +67,7 @@ export default function Beranda() {
     else if (firebaseData && !isError)
         return (
             <>
+                <PopUp isOpen={isOpen} onClose={handleClose} />
                 <div className='bg-white'>
                     <div className='xl:px-52 lg:px-32 md:px-5 xs:px-5'>
                         <div>
@@ -58,7 +78,7 @@ export default function Beranda() {
                                 <span className='text-2xl font-bold '>GAME TOP UP</span>
                             </div>
                         </div>
-                        <div className='grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-2 xs:grid-cols-2 xss:grid-cols-2 gap-4'>
+                        <div className='grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-2 xs:grid-cols-2 xss:grid-cols-2 gap-4'>
                             {Object.keys(firebaseData).map((key) => (
                                 <div key={key}>
                                     <div className='rounded-lg'>

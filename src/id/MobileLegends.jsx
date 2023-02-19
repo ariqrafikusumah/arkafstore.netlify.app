@@ -237,7 +237,7 @@ export default function MobileLegends() {
                     <div className='font-bold text-lg'>
                       <span className='border border-indigo-500 bg-indigo-500 px-2 text-white rounded-full'>1</span>&nbsp;Masukkan User ID
                     </div>
-                    <div className='xl:grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 sm:grid-cols-1 lg:grid gap-4 px-2 py-2 mb-2'>
+                    <div className='xl:grid xl:grid-cols-2 lg:grid-cols-1 lg:grid md:grid-cols-2 md:grid sm:grid sm:grid-cols-1 xs:grid xs:grid-cols-1 xss:grid xss:grid-cols-1 gap-x-8 gap-y-4 px-2 py-2 mb-2'>
                       <div className="relative">
                         {firebaseData2 ? (
                           <input type="text" name="category" id="category" value={firebaseData2.category} hidden />
