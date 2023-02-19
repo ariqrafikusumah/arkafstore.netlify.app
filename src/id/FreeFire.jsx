@@ -132,7 +132,19 @@ export default function FreeFire() {
   }, []);
 
   const [inputValue, setInputValue] = useState("");
+  const [user_id, setUser_id] = useState('');
+  const [errorUser_id, setErrorUser_id] = useState('');
 
+  const handleChangeUser_id = (event) => {
+    const inputNumberUser_id = event.target.value.replace(/\D/g, '');
+    // Remove non-numeric characters from the input
+    if (inputNumberUser_id.length <= 25) {
+      setUser_id(inputNumberUser_id);
+      setErrorUser_id('');
+    } else {
+      setErrorUser_id('Bagian ini dapat diisi maksimal 25 karakter');
+    }
+  };
   const generateRandomValue = () => {
     const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     let result = "";
@@ -220,8 +232,9 @@ export default function FreeFire() {
                         ) : (
                           <p>Loading...</p>
                         )}
-                        <input type="number" id="user_id" name='user_id' className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                        <input type="number" id="user_id" name='user_id' className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " maxLength="10" value={user_id} onChange={handleChangeUser_id} required />
                         <label htmlFor="user_id" className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Masukkan User ID</label>
+                        {errorUser_id && <div className="errorUser_id text-red-500">{errorUser_id}</div>}
                       </div>
                       {/* <div className="relative">
                         <input type="number" id="zone_id" name='zone_id' className="block px-2.5 pb-2.5 pt-4 w-auto text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />

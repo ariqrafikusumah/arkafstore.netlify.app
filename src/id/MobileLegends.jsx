@@ -132,7 +132,31 @@ export default function MobileLegends() {
   }, []);
 
   const [inputValue, setInputValue] = useState("");
+  const [user_id, setUser_id] = useState('');
+  const [zone_id, setZone_id] = useState('');
+  const [errorUser_id, setErrorUser_id] = useState('');
+  const [errorZone_id, setErrorZone_id] = useState('');
 
+  const handleChangeUser_id = (event) => {
+    const inputNumberUser_id = event.target.value.replace(/\D/g, '');
+    // Remove non-numeric characters from the input
+    if (inputNumberUser_id.length <= 10) {
+      setUser_id(inputNumberUser_id);
+      setErrorUser_id('');
+    } else {
+      setErrorUser_id('Bagian ini dapat diisi maksimal 10 karakter');
+    }
+  };
+  const handleChangeZone_id = (event) => {
+    const inputNumberZone_id = event.target.value.replace(/\D/g, '');
+    // Remove non-numeric characters from the input
+    if (inputNumberZone_id.length <= 5) {
+      setZone_id(inputNumberZone_id);
+      setErrorZone_id('');
+    } else {
+      setErrorZone_id('Bagian ini dapat diisi maksimal 5 karakter');
+    }
+  };
   const generateRandomValue = () => {
     const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     let result = "";
@@ -186,8 +210,8 @@ export default function MobileLegends() {
                 {firebaseData2 ? (
                   <div>
                     <img className='h-32 w-32 rounded-xl' src={firebaseData2.thumbnail} alt="gambar" />
-                    <h1 className='font-bold'>{firebaseData2.category}</h1>
-                    <p>{firebaseData2.description}</p>
+                    <h1 className='text-lg font-bold'>{firebaseData2.category}</h1>
+                    <p className='text-sm'>{firebaseData2.description}</p>
                   </div>
                 ) : (
                   <p>Loading...</p>
@@ -220,12 +244,14 @@ export default function MobileLegends() {
                         ) : (
                           <p>Loading...</p>
                         )}
-                        <input type="number" id="user_id" name='user_id' className="block px-2.5 pb-2.5 pt-4 w-auto text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                        <input type="number" id="user_id" name='user_id' className="block px-2.5 pb-2.5 pt-4 w-auto text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " maxLength="10" value={user_id} onChange={handleChangeUser_id} required />
                         <label htmlFor="user_id" className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Masukkan User ID</label>
+                        {errorUser_id && <div className="errorUser_id text-red-500">{errorUser_id}</div>}
                       </div>
                       <div className="relative">
-                        <input type="number" id="zone_id" name='zone_id' className="block px-2.5 pb-2.5 pt-4 w-auto text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                        <input type="number" id="zone_id" name='zone_id' className="block px-2.5 pb-2.5 pt-4 w-auto text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " maxLength="5" value={zone_id} onChange={handleChangeZone_id} required />
                         <label htmlFor="zone_id" className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">( Zone ID )</label>
+                        {errorZone_id && <div className="errorZone_id text-red-500">{errorZone_id}</div>}
                       </div>
                     </div>
                     <div>
@@ -280,7 +306,7 @@ export default function MobileLegends() {
                               <input type="radio" className='hidden peer' name="payment" id={firebaseData5[e5].qris_name} value={firebaseData5[e5].qris_img} required />
                               <label htmlFor={firebaseData5[e5].qris_name} className="inline-flex items-center justify-between w-full p-4 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:ring-indigo-500 peer-checked:ring-2 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100">
                                 <div className='block'>
-                                  <div className="w-full text-sm font-semibold">{firebaseData5[e5].qris_name}</div>
+                                  <div className="w-full text-sm font-semibold">{firebaseData5[e5].qr_qris}</div>
                                   <div className="w-full text-sm italic">A/n {firebaseData5[e5].qris_name}</div>
                                 </div>
                                 <img className='w-32 h-full ml-3' src={firebaseData5[e5].picture} alt="Gambar" />
@@ -341,7 +367,7 @@ export default function MobileLegends() {
                       </div>
                       <div>
                         <input type="text" value={inputValue} name="kode_order" hidden />
-                        <Button type="submit" className="flex mt-3 text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"><ShoppingCartIcon className="w-5 h-5" /> Beli</Button>
+                        <Button type="submit" className="flex gap-2 mt-3 text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"><ShoppingCartIcon className="w-5 h-5" /> Beli</Button>
                       </div>
                     </div>
                   </div>
