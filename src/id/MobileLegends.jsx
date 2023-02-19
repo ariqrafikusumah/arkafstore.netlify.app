@@ -205,7 +205,7 @@ export default function MobileLegends() {
       <>
         <div>
           <div className='grid xl:grid-cols-2 lg:grid-cols-2 xl:px-52 lg:px-32 md:px-5 sm:px-5 xs:px-2 mt-5'>
-            <div className='border border-gray-200 rounded-xl shadow-lg bg-white xl:w-96 lg:w-96 lg:h-72'>
+            <div className=' rounded-xl xl:w-96 lg:w-96 lg:h-72'>
               <div className='px-5 py-6'>
                 {firebaseData2 ? (
                   <div>
@@ -244,12 +244,12 @@ export default function MobileLegends() {
                         ) : (
                           <p>Loading...</p>
                         )}
-                        <input type="number" id="user_id" name='user_id' className="block px-2.5 pb-2.5 pt-4 w-auto text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " maxLength="10" value={user_id} onChange={handleChangeUser_id} required />
+                        <input type="number" id="user_id" name='user_id' className="block border hover:ring-indigo-500 hover:border-indigo-500 px-2.5 pb-2.5 pt-4 w-auto text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " maxLength="10" value={user_id} onChange={handleChangeUser_id} required />
                         <label htmlFor="user_id" className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Masukkan User ID</label>
                         {errorUser_id && <div className="errorUser_id text-red-500">{errorUser_id}</div>}
                       </div>
                       <div className="relative">
-                        <input type="number" id="zone_id" name='zone_id' className="block px-2.5 pb-2.5 pt-4 w-auto text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " maxLength="5" value={zone_id} onChange={handleChangeZone_id} required />
+                        <input type="number" id="zone_id" name='zone_id' className="block border hover:ring-indigo-500 hover:border-indigo-500 px-2.5 pb-2.5 pt-4 w-auto text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " maxLength="5" value={zone_id} onChange={handleChangeZone_id} required />
                         <label htmlFor="zone_id" className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">( Zone ID )</label>
                         {errorZone_id && <div className="errorZone_id text-red-500">{errorZone_id}</div>}
                       </div>
@@ -274,20 +274,16 @@ export default function MobileLegends() {
                     </div>
                     <div className='grid w-full gap-6 md:grid-cols-2 xs:grid-cols-2 mt-3'>
                       {Object.keys(firebaseData).map((e1) => (
-                        <ul key={e1}>
-                          <li>
-                            <div>
-                              <input type="radio" className='hidden peer' name="products" id={firebaseData[e1].product_name} value={firebaseData[e1].price} required />
-                              <label htmlFor={firebaseData[e1].product_name} className="inline-flex peer-checked:shadow-xl items-center justify-between w-full p-2 text-gray-500 bg-white border peer-checked:ring-indigo-500 peer-checked:ring-2 border-gray-200 rounded-lg cursor-pointer peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100">
-                                <div className='block'>
-                                  <div className="w-full text-sm font-semibold">{firebaseData[e1].product_name}</div>
-                                  <div className="w-full text-sm italic">Rp {firebaseData[e1].price},-</div>
-                                </div>
-                                <img className='w-6 h-6 ml-3' src={firebaseData[e1].picture} alt="Gambar" />
-                              </label>
+                        <div key={e1}>
+                          <input type="radio" className='hidden peer' name="products" id={firebaseData[e1].product_name} value={firebaseData[e1].price} required />
+                          <label htmlFor={firebaseData[e1].product_name} className="inline-flex peer-checked:shadow-xl items-center justify-between w-full p-2 text-gray-500 bg-white border peer-checked:ring-indigo-500 peer-checked:ring-2 border-gray-200 rounded-lg cursor-pointer peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100">
+                            <div className='block'>
+                              <div className="w-full text-sm font-semibold">{firebaseData[e1].product_name}</div>
+                              <div className="w-full text-sm italic">Rp {firebaseData[e1].price},-</div>
                             </div>
-                          </li>
-                        </ul>
+                            <img className='w-6 h-6 ml-3' src={firebaseData[e1].picture} alt="Gambar" />
+                          </label>
+                        </div>
                       ))}
                     </div>
                   </div>
@@ -300,55 +296,43 @@ export default function MobileLegends() {
                     </div>
                     <div className='mt-3'>
                       {Object.keys(firebaseData5).map((e5) => (
-                        <ul key={e5}>
-                          <li>
-                            <div>
-                              <input type="radio" className='hidden peer' name="payment" id={firebaseData5[e5].qris_name} value={firebaseData5[e5].qris_img} required />
-                              <label htmlFor={firebaseData5[e5].qris_name} className="inline-flex items-center justify-between w-full p-4 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:ring-indigo-500 peer-checked:ring-2 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100">
-                                <div className='block'>
-                                  <div className="w-full text-sm font-semibold">{firebaseData5[e5].qr_qris}</div>
-                                  <div className="w-full text-sm italic">A/n {firebaseData5[e5].qris_name}</div>
-                                </div>
-                                <img className='w-32 h-full ml-3' src={firebaseData5[e5].picture} alt="Gambar" />
-                              </label>
+                        <div key={e5}>
+                          <input type="radio" className='hidden peer' name="payment" id={firebaseData5[e5].qris_name} value={firebaseData5[e5].qris_img} required />
+                          <label htmlFor={firebaseData5[e5].qris_name} className="inline-flex items-center justify-between w-full p-4 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:ring-indigo-500 peer-checked:ring-2 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100">
+                            <div className='block'>
+                              <div className="w-full text-sm font-semibold">{firebaseData5[e5].qr_qris}</div>
+                              <div className="w-full text-sm italic">A/n {firebaseData5[e5].qris_name}</div>
                             </div>
-                          </li>
-                        </ul>
+                            <img className='w-32 h-full ml-3' src={firebaseData5[e5].picture} alt="Gambar" />
+                          </label>
+                        </div>
                       ))}
                     </div>
                     <div className='mt-3'>
                       {Object.keys(firebaseData3).map((e3) => (
-                        <ul className='mt-3' key={e3}>
-                          <li>
-                            <div>
-                              <input type="radio" className='hidden peer' name="payment" id={firebaseData3[e3].bank_name} value={firebaseData3[e3].number_account} required />
-                              <label htmlFor={firebaseData3[e3].bank_name} className="inline-flex items-center justify-between w-full p-4 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:ring-indigo-500 peer-checked:ring-2 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100">
-                                <div className='block'>
-                                  <div className="w-full text-sm font-semibold">{firebaseData3[e3].bank_name}</div>
-                                  <div className="w-full text-sm italic">A/n {firebaseData3[e3].first_name} {firebaseData3[e3].last_name}</div>
-                                </div>
-                                <img className='w-32 h-full ml-3' src={firebaseData3[e3].picture} alt="Gambar" />
-                              </label>
+                        <div className='mt-3' key={e3}>
+                          <input type="radio" className='hidden peer' name="payment" id={firebaseData3[e3].bank_name} value={firebaseData3[e3].number_account} required />
+                          <label htmlFor={firebaseData3[e3].bank_name} className="inline-flex items-center justify-between w-full p-4 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:ring-indigo-500 peer-checked:ring-2 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100">
+                            <div className='block'>
+                              <div className="w-full text-sm font-semibold">{firebaseData3[e3].bank_name}</div>
+                              <div className="w-full text-sm italic">A/n {firebaseData3[e3].first_name} {firebaseData3[e3].last_name}</div>
                             </div>
-                          </li>
-                        </ul>
+                            <img className='w-32 h-full ml-3' src={firebaseData3[e3].picture} alt="Gambar" />
+                          </label>
+                        </div>
                       ))}
                       <div className='mt-3'>
                         {Object.keys(firebaseData4).map((e4) => (
-                          <ul key={e4}>
-                            <li>
-                              <div>
-                                <input type="radio" className='hidden peer' name="payment" id={firebaseData4[e4].wallet_name} value={firebaseData4[e4].number_account} required />
-                                <label htmlFor={firebaseData4[e4].wallet_name} className="inline-flex items-center justify-between w-full p-4 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:ring-indigo-500 peer-checked:ring-2 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100">
-                                  <div className='block'>
-                                    <div className="w-full text-sm font-semibold">{firebaseData4[e4].wallet_name}</div>
-                                    <div className="w-full text-sm italic">A/n {firebaseData4[e4].first_name} {firebaseData4[e4].last_name}</div>
-                                  </div>
-                                  <img className='w-32 h-full ml-3' src={firebaseData4[e4].picture} alt="Gambar" />
-                                </label>
+                          <div key={e4}>
+                            <input type="radio" className='hidden peer' name="payment" id={firebaseData4[e4].wallet_name} value={firebaseData4[e4].number_account} required />
+                            <label htmlFor={firebaseData4[e4].wallet_name} className="inline-flex items-center justify-between w-full p-4 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:ring-indigo-500 peer-checked:ring-2 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100">
+                              <div className='block'>
+                                <div className="w-full text-sm font-semibold">{firebaseData4[e4].wallet_name}</div>
+                                <div className="w-full text-sm italic">A/n {firebaseData4[e4].first_name} {firebaseData4[e4].last_name}</div>
                               </div>
-                            </li>
-                          </ul>
+                              <img className='w-32 h-full ml-3' src={firebaseData4[e4].picture} alt="Gambar" />
+                            </label>
+                          </div>
                         ))}
                       </div>
                     </div>
@@ -362,7 +346,7 @@ export default function MobileLegends() {
                     </div>
                     <div>
                       <div className="relative mt-3">
-                        <input type="text" id="Pengirim" name='nama' className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                        <input type="text" id="Pengirim" name='nama' className="block border hover:ring-indigo-500 hover:border-indigo-500 px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
                         <label htmlFor="Pengirim" className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Masukkan Nama Pengirim</label>
                       </div>
                       <div>

@@ -4,45 +4,45 @@ import Logo from '../assets/img/logo-web.png';
 export default function Footer() {
     return (
         <>
-            <footer className="p-4 sm:p-6 dark:bg-gray-900 xl:px-52 lg:px-32 md:px-5 mt-5">
+            <footer className="p-4 sm:p-6 bg-white xl:px-52 lg:px-32 md:px-5 mt-5">
                 <div className="md:flex md:justify-between">
                     <div className="mb-6 md:mb-0">
                         <a href="/" className="flex items-center">
                             <img src={Logo} className="h-32 mr-3" alt="logo" />
-                            {/* <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span> */}
+                            {/* <span className="self-center text-2xl font-semibold whitespace-nowrap ">Flowbite</span> */}
                         </a>
                     </div>
                     <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
                         <div>
-                            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">GAME POPULAR</h2>
+                            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">GAME POPULAR</h2>
                             <ul className="text-gray-600 dark:text-gray-400">
                                 <li className="mb-4">
-                                    <a href="/MobileLegends" className="hover:underline">Mobile Legends</a>
+                                    <a href="/MobileLegends" className="text-gray-600 no-underline hover:underline">Mobile Legends</a>
                                 </li>
                                 <li className="mb-4">
-                                    <a href="/FreeFire" className="hover:underline">Free Fire</a>
+                                    <a href="/FreeFire" className="text-gray-600 no-underline hover:underline">Free Fire</a>
                                 </li>
                             </ul>
                         </div>
                         <div>
-                            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">PETA SITUS</h2>
+                            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">PETA SITUS</h2>
                             <ul className="text-gray-600 dark:text-gray-400">
                                 <li className="mb-4">
-                                    <a href="/" className="hover:underline ">Beranda</a>
+                                    <a href="/" className="text-gray-600 no-underline hover:underline ">Beranda</a>
                                 </li>
                                 <li className="mb-4">
-                                    <a href="/Tentang" className="hover:underline">Tentang</a>
+                                    <a href="/Tentang" className="text-gray-600 no-underline hover:underline">Tentang</a>
                                 </li>
                             </ul>
                         </div>
                         <div>
-                            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+                            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase ">Legal</h2>
                             <ul className="text-gray-600 dark:text-gray-400">
                                 <li className="mb-4">
-                                    <a href="/PrivacyPolicy" className="hover:underline">Privacy Policy</a>
+                                    <a href="/PrivacyPolicy" className="text-gray-600 no-underline hover:underline">Privacy Policy</a>
                                 </li>
                                 <li className="mb-4">
-                                    <a href="/Terms" className="hover:underline">Terms &amp; Conditions</a>
+                                    <a href="/Terms" className="text-gray-600 no-underline hover:underline">Terms &amp; Conditions</a>
                                 </li>
                             </ul>
                         </div>

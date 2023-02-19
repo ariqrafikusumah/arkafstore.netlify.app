@@ -4,7 +4,6 @@ module.exports = {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
     "./public/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/flowbite/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     screens: {
@@ -18,6 +17,5 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require('flowbite/plugin')
   ],
 }
