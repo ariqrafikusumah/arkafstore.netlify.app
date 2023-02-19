@@ -185,7 +185,7 @@ export default function MobileLegends() {
     const nama = event.target.nama.value;
     const randomValue = generateRandomValue();
     setInputValue(randomValue);
-    const url = `https://wa.me/${phone_whatsapp}?text=*›%20Game*%20%3A%20${encodeURIComponent(category)}%0A*›%20Order%20ID*%20%3A%20${encodeURIComponent(user_id)}%20(${encodeURIComponent(zone_id)})%0A*›%20Item*%20%3A%20${encodeURIComponent(products)}%0A*›%20Pembayaran%20via*%20%3A%20${encodeURIComponent(payment)}%20${encodeURIComponent(payment_number_account)}%0A*›%20Total*%20%3A%20Rp%20${encodeURIComponent(products_price)}%2C-%0A*›%20Nama Pengirim*%20%3A%20${encodeURIComponent(nama)}%0A*›%20RefId*%20%3A%20%60%60%60S2302160${encodeURIComponent(randomValue)}%60%60%60%0A%0AKirim%20Bukti%20Pembayaran%20Disini%20ya%0AJika%20sudah%20ketik%20*PING*%0A%0A*ARKAFSTORE*`;
+    const url = `https://wa.me/${phone_whatsapp}?text=*›%20Game*%20%3A%20${encodeURIComponent(category)}%0A*›%20Order%20ID*%20%3A%20${encodeURIComponent(user_id)}%20(${encodeURIComponent(zone_id)})%0A*›%20Item*%20%3A%20${encodeURIComponent(products)}%0A*›%20Pembayaran%20via*%20%3A%20${encodeURIComponent(payment)}%20${encodeURIComponent(payment_number_account)}%0A*›%20Total*%20%3A%20Rp%20${encodeURIComponent(products_price)}%2C-%0A*›%20Nama Costumer*%20%3A%20${encodeURIComponent(nama)}%0A*›%20RefId*%20%3A%20%60%60%60S2302160${encodeURIComponent(randomValue)}%60%60%60%0A%0AKirim%20Bukti%20Pembayaran%20Disini%20ya%0AJika%20sudah%20ketik%20*PING*%0A%0A*ARKAFSTORE*`;
     window.open(url);
   };
 
@@ -204,9 +204,9 @@ export default function MobileLegends() {
     return (
       <>
         <div>
-          <div className='grid xl:grid-cols-2 lg:grid-cols-2 xl:px-52 lg:px-32 md:px-5 sm:px-5 xs:px-2 mt-5'>
+          <div className='grid xl:grid-cols-2 lg:grid-cols-2 xl:px-52 lg:px-32 md:px-5 sm:px-5 xs:px-2 mt-3'>
             <div className=' rounded-xl xl:w-96 lg:w-96 lg:h-72'>
-              <div className='px-5 py-6'>
+              <div className='xl:px-5 xl:py-6'>
                 {firebaseData2 ? (
                   <div>
                     <img className='h-32 w-32 rounded-xl' src={firebaseData2.thumbnail} alt="gambar" />
@@ -233,25 +233,25 @@ export default function MobileLegends() {
             <div>
               <form onSubmit={handleSubmit}>
                 <div className='border border-gray-200 rounded-xl shadow-lg bg-white xl:mt-0 lg:mt-0 md:mt-5 xs:mt-5 xss:mt-5'>
-                  <div className='px-5 py-5'>
+                  <div className='xl:px-5 xl:py-5 lg:px-5 lg:py-5 md:px-5 md:py-5'>
                     <div className='font-bold text-lg'>
                       <span className='border border-indigo-500 bg-indigo-500 px-2 text-white rounded-full'>1</span>&nbsp;Masukkan User ID
                     </div>
-                    <div className='flex flex-wrap gap-4 px-2 py-2'>
+                    <div className='xl:grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 sm:grid-cols-1 lg:grid gap-4 px-2 py-2 mb-2'>
                       <div className="relative">
                         {firebaseData2 ? (
                           <input type="text" name="category" id="category" value={firebaseData2.category} hidden />
                         ) : (
                           <p>Loading...</p>
                         )}
-                        <input type="number" id="user_id" name='user_id' className="block border hover:ring-indigo-500 hover:border-indigo-500 px-2.5 pb-2.5 pt-4 w-auto text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " maxLength="10" value={user_id} onChange={handleChangeUser_id} required />
-                        <label htmlFor="user_id" className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Masukkan User ID</label>
-                        {errorUser_id && <div className="errorUser_id text-red-500">{errorUser_id}</div>}
+                        <input type="number" id="user_id" name='user_id' className="block border hover:ring-indigo-500 hover:border-indigo-500 px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " maxLength="10" value={user_id} onChange={handleChangeUser_id} required />
+                        <label htmlFor="user_id" className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Masukkan User ID</label>
+                        {errorUser_id && <div className="errorUser_id text-sm text-red-500 sm:mb-3">{errorUser_id}</div>}
                       </div>
                       <div className="relative">
-                        <input type="number" id="zone_id" name='zone_id' className="block border hover:ring-indigo-500 hover:border-indigo-500 px-2.5 pb-2.5 pt-4 w-auto text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " maxLength="5" value={zone_id} onChange={handleChangeZone_id} required />
-                        <label htmlFor="zone_id" className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">( Zone ID )</label>
-                        {errorZone_id && <div className="errorZone_id text-red-500">{errorZone_id}</div>}
+                        <input type="number" id="zone_id" name='zone_id' className="block border hover:ring-indigo-500 hover:border-indigo-500 px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="(                ) " maxLength="5" value={zone_id} onChange={handleChangeZone_id} required />
+                        <label htmlFor="zone_id" className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">&nbsp; &nbsp;Zone ID </label>
+                        {errorZone_id && <div className="errorZone_id text-sm text-red-500">{errorZone_id}</div>}
                       </div>
                     </div>
                     <div>
@@ -259,7 +259,7 @@ export default function MobileLegends() {
                         <div className=' font-thin italic text-justify text-xs mb-2'>
                           Untuk mengetahui User ID Anda, silakan klik menu profile dibagian kiri atas pada menu utama game. User ID akan terlihat dibagian bawah Nama Karakter Game Anda. Silakan masukkan User ID Anda untuk menyelesaikan transaksi. Contoh : 12345678 (1234).
                         </div>
-                        <Button className='block text-white bg-indigo-500 hover:bg-indigo-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center' variant="primary" onClick={handleShow}>
+                        <Button className="flex gap-2 mt-3 text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" onClick={handleShow}>
                           Petunjuk
                         </Button>
                       </div>
@@ -268,7 +268,7 @@ export default function MobileLegends() {
                 </div>
 
                 <div className='border border-gray-200 rounded-xl shadow-lg bg-white xl:mt-2 lg:mt-0 md:mt-5 xs:mt-5 xss:mt-5'>
-                  <div className='px-5 py-5'>
+                  <div className='xl:px-5 xl:py-5 lg:px-5 lg:py-5 md:px-5 sm:py-5 sm:px-5 sm:py-5 mb-2'>
                     <div className='font-bold text-lg'>
                       <span className='border border-indigo-500 bg-indigo-500 px-2 text-white rounded-full'>2</span>&nbsp;Pilih Nominal Top Up
                     </div>
@@ -290,7 +290,7 @@ export default function MobileLegends() {
                 </div>
 
                 <div className='border border-gray-200 rounded-xl shadow-lg bg-white xl:mt-2 lg:mt-0 md:mt-5 xs:mt-5 xss:mt-5'>
-                  <div className='px-5 py-5'>
+                  <div className='xl:px-5 xl:py-5 lg:px-5 lg:py-5 md:px-5 sm:py-5 sm:px-5 sm:py-5'>
                     <div className='font-bold text-lg'>
                       <span className='border border-indigo-500 bg-indigo-500 px-2 text-white rounded-full'>3</span>&nbsp;Pilih Pembayaran
                     </div>
@@ -340,18 +340,18 @@ export default function MobileLegends() {
                 </div>
 
                 <div className='border border-gray-200 rounded-xl shadow-lg bg-white xl:mt-2 lg:mt-0 md:mt-5 xs:mt-5 xss:mt-5'>
-                  <div className='px-5 py-5'>
+                  <div className='xl:px-5 xl:py-5 lg:px-5 lg:py-5 md:px-5 sm:py-5 sm:px-5 sm:py-5 mb-2'>
                     <div className='font-bold text-lg'>
                       <span className='border border-indigo-500 bg-indigo-500 px-2 text-white rounded-full'>4</span>&nbsp;Beli
                     </div>
                     <div>
                       <div className="relative mt-3">
-                        <input type="text" id="Pengirim" name='nama' className="block border hover:ring-indigo-500 hover:border-indigo-500 px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
-                        <label htmlFor="Pengirim" className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Masukkan Nama Pengirim</label>
+                        <input type="text" id="costumer" name='nama' className="block border hover:ring-indigo-500 hover:border-indigo-500 px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                        <label htmlFor="costumer" className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Masukkan Nama Anda</label>
                       </div>
                       <div>
                         <input type="text" value={inputValue} name="kode_order" hidden />
-                        <Button type="submit" className="flex gap-2 mt-3 text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"><ShoppingCartIcon className="w-5 h-5" /> Beli</Button>
+                        <button type="submit" className="flex gap-2 mt-3 text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"><ShoppingCartIcon className="w-5 h-5" /> Beli</button>
                       </div>
                     </div>
                   </div>

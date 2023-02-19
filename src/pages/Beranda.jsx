@@ -69,7 +69,7 @@ export default function Beranda() {
                                             <div className='text-center font-bold'>{firebaseData[key].category}</div>
                                             <div className='text-center'>
                                                 <a href={firebaseData[key].link}>
-                                                    <Button className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-2"> Top Up </Button>
+                                                    <button className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-2"> Top Up </button>
                                                 </a>
                                             </div>
                                         </div>
