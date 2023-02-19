@@ -206,7 +206,7 @@ export default function MobileLegends() {
         <div>
           <div className='grid xl:grid-cols-2 lg:grid-cols-2 xl:px-52 lg:px-32 md:px-5 sm:px-5 xs:px-2 mt-3'>
             <div className=' rounded-xl xl:w-96 lg:w-96 lg:h-72'>
-              <div className='xl:px-5 xl:py-6'>
+              <div className='xl:px-5 xl:py-6 '>
                 {firebaseData2 ? (
                   <div>
                     <img className='h-32 w-32 rounded-xl' src={firebaseData2.thumbnail} alt="gambar" />
@@ -216,7 +216,7 @@ export default function MobileLegends() {
                 ) : (
                   <p>Loading...</p>
                 )}
-                <div className='flex flex-cols-2 gap-2'>
+                <div className='flex flex-cols-2 gap-2 mt-3'>
                   <div>
                     <a href="https://apps.apple.com/app/id1160056295?country=my" target="_blank" rel="noopener noreferrer">
                       <img src="https://d1qgcmfii0ptfa.cloudfront.net/S/content/mobile/images/app_store_coda.png" alt="" />
@@ -233,7 +233,7 @@ export default function MobileLegends() {
             <div>
               <form onSubmit={handleSubmit}>
                 <div className='border border-gray-200 rounded-xl shadow-lg bg-white xl:mt-0 lg:mt-0 md:mt-5 xs:mt-5 xss:mt-5'>
-                  <div className='xl:px-5 xl:py-5 lg:px-5 lg:py-5 md:px-5 md:py-5'>
+                  <div className='xl:px-5 xl:py-5 lg:px-5 lg:py-5 md:px-5 md:py-5 sm:px-5 sm:py-5 xs:px-2 xs:py-2 mb-3'>
                     <div className='font-bold text-lg'>
                       <span className='border border-indigo-500 bg-indigo-500 px-2 text-white rounded-full'>1</span>&nbsp;Masukkan User ID
                     </div>
@@ -249,7 +249,7 @@ export default function MobileLegends() {
                         {errorUser_id && <div className="errorUser_id text-sm text-red-500 sm:mb-3">{errorUser_id}</div>}
                       </div>
                       <div className="relative">
-                        <input type="number" id="zone_id" name='zone_id' className="block border hover:ring-indigo-500 hover:border-indigo-500 px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="(                ) " maxLength="5" value={zone_id} onChange={handleChangeZone_id} required />
+                        <input type="number" id="zone_id" name='zone_id' className="block border hover:ring-indigo-500 hover:border-indigo-500 px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="(                 ) " maxLength="5" value={zone_id} onChange={handleChangeZone_id} required />
                         <label htmlFor="zone_id" className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">&nbsp; &nbsp;Zone ID </label>
                         {errorZone_id && <div className="errorZone_id text-sm text-red-500">{errorZone_id}</div>}
                       </div>
@@ -268,7 +268,7 @@ export default function MobileLegends() {
                 </div>
 
                 <div className='border border-gray-200 rounded-xl shadow-lg bg-white xl:mt-2 lg:mt-0 md:mt-5 xs:mt-5 xss:mt-5'>
-                  <div className='xl:px-5 xl:py-5 lg:px-5 lg:py-5 md:px-5 sm:py-5 sm:px-5 sm:py-5 mb-2'>
+                  <div className='xl:px-5 xl:py-5 lg:px-5 lg:py-5 md:px-5 md:py-5 sm:px-5 sm:py-5 xs:px-2 xs:py-2 mb-3'>
                     <div className='font-bold text-lg'>
                       <span className='border border-indigo-500 bg-indigo-500 px-2 text-white rounded-full'>2</span>&nbsp;Pilih Nominal Top Up
                     </div>
@@ -290,7 +290,7 @@ export default function MobileLegends() {
                 </div>
 
                 <div className='border border-gray-200 rounded-xl shadow-lg bg-white xl:mt-2 lg:mt-0 md:mt-5 xs:mt-5 xss:mt-5'>
-                  <div className='xl:px-5 xl:py-5 lg:px-5 lg:py-5 md:px-5 sm:py-5 sm:px-5 sm:py-5'>
+                  <div className='xl:px-5 xl:py-5 lg:px-5 lg:py-5 md:px-5 md:py-5 sm:px-5 sm:py-5 xs:px-2 xs:py-2 mb-3'>
                     <div className='font-bold text-lg'>
                       <span className='border border-indigo-500 bg-indigo-500 px-2 text-white rounded-full'>3</span>&nbsp;Pilih Pembayaran
                     </div>
@@ -340,7 +340,7 @@ export default function MobileLegends() {
                 </div>
 
                 <div className='border border-gray-200 rounded-xl shadow-lg bg-white xl:mt-2 lg:mt-0 md:mt-5 xs:mt-5 xss:mt-5'>
-                  <div className='xl:px-5 xl:py-5 lg:px-5 lg:py-5 md:px-5 sm:py-5 sm:px-5 sm:py-5 mb-2'>
+                  <div className='xl:px-5 xl:py-5 lg:px-5 lg:py-5 md:px-5 md:py-5 sm:px-5 sm:py-5 xs:px-2 xs:py-2 mb-3'>
                     <div className='font-bold text-lg'>
                       <span className='border border-indigo-500 bg-indigo-500 px-2 text-white rounded-full'>4</span>&nbsp;Beli
                     </div>

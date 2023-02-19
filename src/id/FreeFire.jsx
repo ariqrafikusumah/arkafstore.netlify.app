@@ -204,7 +204,7 @@ export default function FreeFire() {
                 ) : (
                   <p>Loading...</p>
                 )}
-                <div className='flex flex-cols-2 gap-2'>
+                <div className='flex flex-cols-2 gap-2 mt-3'>
                   <div>
                     <a href="https://apps.apple.com/app/id1160056295?country=my" target="_blank" rel="noopener noreferrer">
                       <img src="https://d1qgcmfii0ptfa.cloudfront.net/S/content/mobile/images/app_store_coda.png" alt="" />
@@ -221,7 +221,7 @@ export default function FreeFire() {
             <div>
               <form onSubmit={handleSubmit}>
                 <div className='border border-gray-200 rounded-xl shadow-lg bg-white xl:mt-0 lg:mt-0 md:mt-5 xs:mt-5 xss:mt-5'>
-                  <div className='xl:px-5 xl:py-5 lg:px-5 lg:py-5 md:px-5 md:py-5'>
+                  <div className='xl:px-5 xl:py-5 lg:px-5 lg:py-5 md:px-5 md:py-5 sm:px-5 sm:py-5 xs:px-2 xs:py-2 mb-3'>
                     <div className='font-bold text-lg'>
                       <span className='border border-indigo-500 bg-indigo-500 px-2 text-white rounded-full'>1</span>&nbsp;Masukkan User ID
                     </div>
@@ -256,7 +256,7 @@ export default function FreeFire() {
                 </div>
 
                 <div className='border border-gray-200 rounded-xl shadow-lg bg-white xl:mt-2 lg:mt-0 md:mt-5 xs:mt-5 xss:mt-5'>
-                  <div className='xl:px-5 xl:py-5 lg:px-5 lg:py-5 md:px-5 sm:py-5 sm:px-5 sm:py-5 mb-2'>
+                  <div className='xl:px-5 xl:py-5 lg:px-5 lg:py-5 md:px-5 md:py-5 sm:px-5 sm:py-5 xs:px-2 xs:py-2 mb-3'>
                     <div className='font-bold text-lg'>
                       <span className='border border-indigo-500 bg-indigo-500 px-2 text-white rounded-full'>2</span>&nbsp;Pilih Nominal Top Up
                     </div>
@@ -278,7 +278,7 @@ export default function FreeFire() {
                 </div>
 
                 <div className='border border-gray-200 rounded-xl shadow-lg bg-white xl:mt-2 lg:mt-0 md:mt-5 xs:mt-5 xss:mt-5'>
-                  <div className='xl:px-5 xl:py-5 lg:px-5 lg:py-5 md:px-5 sm:py-5 sm:px-5 sm:py-5'>
+                  <div className='xl:px-5 xl:py-5 lg:px-5 lg:py-5 md:px-5 md:py-5 sm:px-5 sm:py-5 xs:px-2 xs:py-2 mb-3'>
                     <div className='font-bold text-lg'>
                       <span className='border border-indigo-500 bg-indigo-500 px-2 text-white rounded-full'>3</span>&nbsp;Pilih Pembayaran
                     </div>
@@ -328,7 +328,7 @@ export default function FreeFire() {
                 </div>
 
                 <div className='border border-gray-200 rounded-xl shadow-lg bg-white xl:mt-2 lg:mt-0 md:mt-5 xs:mt-5 xss:mt-5'>
-                  <div className='xl:px-5 xl:py-5 lg:px-5 lg:py-5 md:px-5 sm:py-5 sm:px-5 sm:py-5 mb-2'>
+                  <div className='xl:px-5 xl:py-5 lg:px-5 lg:py-5 md:px-5 md:py-5 sm:px-5 sm:py-5 xs:px-2 xs:py-2 mb-3'>
                     <div className='font-bold text-lg'>
                       <span className='border border-indigo-500 bg-indigo-500 px-2 text-white rounded-full'>4</span>&nbsp;Beli
                     </div>
