@@ -12,6 +12,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndCondition from "./pages/TermsAndCondition";
 import SignIn from "./auth/SignIn";
+import DashboardAdmin from "./pages/admin/DashboardAdmin";
+import MobileLegend from "./pages/admin/MobileLegends";
 
 export default function App() {
   return (
@@ -26,7 +28,9 @@ export default function App() {
           <Route path="/id/MobileLegends" element={<MobileLegends />} />
           <Route path="/id/FreeFire" element={<FreeFire />} />
           <Route path="/id/PubgMobile" element={<PubgMobile />} />
-          <Route path="/auth/sign-in" element={<SignIn />} />
+          {/* <Route path="/auth/Sign-in" element={<SignIn />} /> */}
+          <Route path="/admin/Dashboard-Admin" element={<DashboardAdmin/>} />
+          <Route path="/admin/MobileLegend" element={<MobileLegend/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

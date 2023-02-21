@@ -1,17 +1,27 @@
-import { useState } from 'react';
-import Logo from '../assets/img/logo-web.png';
+import React,{ useState } from 'react';
+import axios from 'axios';
 
 function SignIn() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // handle login logic here
-    }
+        const data = { email, password };
+        axios
+            .post("https://api-arkafstore-ed871-default-rtdb.firebaseio.com/account.json?auth=EMr7RAu4y0z2GvQDmGIsuGfwrDRvjt2bbp1ixQCR", data)
+            .then((response) => {
+                console.log(response.data);
+                // jika login berhasil, bisa melakukan aksi seperti redirect ke halaman dashboard
+            })
+            .catch((error) => {
+                console.log(error.response.data);
+                // jika login gagal, bisa menampilkan pesan error
+            });
+    };
 
     return (
-        <div className="min-h-screen bg-gray-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+        <div className=" bg-gray-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-md">
                 <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
                     Sign-in

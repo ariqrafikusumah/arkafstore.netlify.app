@@ -31,7 +31,7 @@ export default function Navbar_() {
                     <Nav.Link href="/Tentang">Tentang</Nav.Link>
                     <Nav.Link href="/PrivacyPolicy">Privacy Policy</Nav.Link>
                     <Nav.Link href="/Terms">Terms &amp; Condition</Nav.Link>
-                    <Nav.Link href="/auth/Sign-in">Login</Nav.Link>
+                    {/* <Nav.Link href="/auth/Sign-in">Login</Nav.Link> */}
                   </Nav>
                 </Offcanvas.Body>
               </Navbar.Offcanvas>

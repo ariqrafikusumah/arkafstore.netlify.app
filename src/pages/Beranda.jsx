@@ -101,7 +101,7 @@ export default function Beranda() {
                 </div>
             </>
         );
-    // else {
-    //     return <h1 className='text-center'>Something Went Wrong</h1>;
-    // }
+    else {
+        return <h1 className='text-center'>Something Went Wrong</h1>;
+    }
 }
